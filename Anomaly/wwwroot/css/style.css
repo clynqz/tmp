@@ -1,0 +1,327 @@
+:root {
+    --text-white-color: #f2f2f2;
+    --main-bg-color: #101010;
+    --login-form-bg-color: #141414;
+    --download-button-bg-color: #eb0000;
+    --invalid-input-border-color: #a50000;
+    --login-bg-color: #222222;
+    --hover-select-bg-color: #616161;
+    --input-text-shadow-color: rgba(66, 66, 66, 0.4);
+    --submit-button-bg-color: rgb(35, 134, 54);
+    --submit-button-hover-bg-color: rgb(42, 154, 58);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+html, body {
+    height: 100%;
+}
+
+.main-header {
+    background-color: var(--main-bg-color);
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-header-wrapper {
+    display: flex;
+    width: 90%;
+    margin: auto;
+    align-items: center;
+}
+
+.main-header-logotype-wrapper {
+    width: 3.5%;
+    margin-right: 3.5%;
+}
+
+.main-header-logotype {
+    width: 85%;
+}
+
+.main-header-social-links-wrapper {
+    margin-right: auto;
+}
+
+.main-header-social-link-arrow {
+    transform: rotate(80deg);
+    display: inline-block;
+    color: var(--hover-select-bg-color);
+}
+
+.main-header-discord-social-link {
+    color: var(--text-white-color);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+}
+
+.main-header-discord-social-link:hover {
+    color: var(--hover-select-bg-color);
+}
+
+.main-header-button, .main-header-account-actions-list-wrapper {
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    padding: 5% 0;
+    transition: background-color 0.25s ease, color ease 0.25s;
+}
+
+.main-header-account-actions-list-wrapper {
+    position: relative;
+    display: inline-block;
+    cursor: default;
+}
+
+.main-header-account-nickname-wrapper {
+    text-align: center;
+}
+
+.main-header-account-actions-list {
+    list-style: none;
+    display: none;
+    position: absolute;
+    width: 100%;
+    top: 100%;
+}
+
+.main-header-account-actions-list-wrapper:hover .main-header-account-actions-list {
+    display: block;
+}
+
+.main-header-account-actions-list-first-item {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.main-header-account-actions-list-last-item {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.main-header-account-actions-list-empty-block {
+    padding: 2% 0;
+}
+
+.main-header-account-actions-list-item {
+    width: 100%;
+    text-align: center;
+    padding: 5% 0;
+    color: var(--hover-select-bg-color);
+    background-color: var(--login-bg-color);
+}
+
+.main-header-signout-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.main-header-login-wrapper {
+    width: 10%;
+    margin-right: 2%;
+}
+
+.main-header-login-button, .main-header-account-actions-list-wrapper {
+    background-color: var(--login-bg-color);
+    color: var(--text-white-color);
+}
+
+.main-header-login-button:hover {
+    background-color: var(--main-bg-color);
+}
+
+.main-header-play-wrapper {
+    width: 10%;
+}
+
+.main-header-play-button {
+    background-color: var(--download-button-bg-color);
+    color: var(--text-white-color);
+}
+
+.main-header-play-button:hover {
+    background-color: var(--text-white-color);
+    color: var(--main-bg-color);
+}
+
+.index-main {
+    height: 90%;
+    background-image: url("../img/index-main-background.jpg");
+    background-size: cover;
+    background-position-y: 35%;
+    background-repeat: no-repeat;
+}
+
+.index-main-wrapper {
+    width: 90%;
+    margin: auto;
+}
+
+.index-main-welcome-wrapper {
+    padding-top: 27%;
+}
+
+.index-main-welcome-text {
+    font-size: 2.5rem;
+    color: var(--text-white-color);
+}
+
+.index-main-welcome-text::first-letter {
+    text-transform: uppercase;
+}
+
+.index-main-play-section-wrapper {
+    margin-top: 3%;
+}
+
+.index-main-play-section-button {
+    width: 35%;
+    padding: 1% 0;
+    cursor: pointer;
+    background-color: var(--download-button-bg-color);
+    color: var(--text-white-color);
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    transition: background-color 0.25s ease, color ease 0.25s;
+}
+
+.index-main-play-section-button:hover {
+    background-color: var(--text-white-color);
+    color: var(--main-bg-color);
+}
+
+/* < --- > */
+
+.register-main, .login-main {
+    height: 100%;
+    background-color: var(--main-bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-main-wrapper, .login-main-wrapper {
+    background-color: var(--login-form-bg-color);
+    width: 25%;
+    border-radius: 10px;
+    border: 1px solid var(--login-bg-color);
+    display: inline-block;
+}
+
+.register-main-form-wrapper, .login-main-form-wrapper {
+    margin: 0 10% 6% 10%;
+}
+
+.register-main-input-text, .login-main-input-text {
+    width: 100%;
+    display: block;
+    font-size: 1.05rem;
+    border-radius: 4px;
+    border: none;
+    background-color: var(--login-bg-color);
+    color: var(--text-white-color);
+    padding: .85% 1%;
+    border: 1px solid transparent;
+    margin-bottom: 7%;
+}
+
+.register-main-input-text::selection, .login-main-input-text::selection {
+    background-color: var(--hover-select-bg-color);
+}
+
+.register-main-input-text:focus, .login-main-input-text:focus {
+    outline: none;
+    box-shadow: 0 0 5px var(--input-text-shadow-color);
+}
+
+.register-main-input-text-focused, .login-main-input-text-focused {
+    border: 1px solid var(--hover-select-bg-color);
+}
+
+#repeat-password-input.register-main-input-text, #password-input.login-main-input-text {
+    margin-bottom: 0;
+}
+
+.register-form-label, .login-form-label {
+    color: var(--hover-select-bg-color);
+    display: block;
+}
+
+.register-main-logotype-wrapper, .login-main-logotype-wrapper {
+    width: 13%;
+    margin: 10% auto 10% auto;
+}
+
+.register-main-logotype, .login-main-logotype {
+    width: 100%;
+}
+
+.register-have-account-link-wrapper, .login-no-account-link-wrapper {
+    text-align: center;
+    margin-bottom: 9%;
+}
+
+.register-have-account-link, .login-no-account-link {
+    color: var(--hover-select-bg-color);
+    text-decoration: none;
+}
+
+.register-have-account-link:hover, .login-no-account-link:hover {
+    text-decoration: underline;
+}
+
+.register-main-password-switch-visibility, .login-main-password-switch-visibility {
+    display: inline-block;
+    color: var(--hover-select-bg-color);
+    cursor: pointer;
+}
+
+.register-main-password-switch-visibility-wrapper, .login-main-password-switch-visibility-wrapper {
+    text-align: right;
+}
+
+.register-main-passwords-visible::after, .login-main-password-visible::after {
+    content: "скрыть";
+}
+
+.register-main-passwords-hidden::after, .login-main-password-hidden::after {
+    content: "показать";
+}
+
+.border-red {
+    border: 1px solid var(--invalid-input-border-color);
+}
+
+.register-main-submit-button, .login-main-submit-button {
+    width: 100%;
+    margin-top: 7%;
+    padding: .85% 0;
+    font-size: 1.05rem;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    border: 1px solid transparent;
+    color: var(--text-white-color);
+    background-color: var(--submit-button-bg-color);
+    cursor: pointer;
+    transition: background-color 0.1s ease;
+}
+
+.register-main-submit-button:hover, .login-main-submit-button:hover {
+    background-color: var(--submit-button-hover-bg-color);
+}

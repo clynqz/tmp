@@ -1,0 +1,136 @@
+﻿@model LoginViewModel    
+
+<main class="login-main">
+    <div id="login-wrapper" 
+         class="login-main-wrapper@(!Model.IsFormDataCorrect ? " border-red" : "")">
+        <div class="login-main-logotype-wrapper">
+            <a asp-controller="Home" asp-action="Index">
+                <img class="login-main-logotype" src="~/img/logotype.png" alt="logotype">
+            </a>
+        </div>
+        <div class="login-main-form-wrapper">
+            <form method="post" asp-action="Login" autocomplete="off" spellcheck="false">
+                <div>
+                    <label id="login-input-label" for="login-input" class="login-form-label">email или логин</label>
+                    <input name="login" id="login-input" class="login-main-input-text" value="@Model.PreviousLogin">
+                </div>
+                <div>
+                    <label for="password-input" class="login-form-label">пароль</label>
+                    <input name="password" id="password-input" class="login-main-input-text" type="password" value="@Model.PreviousPassword">
+                    <div class="login-main-password-switch-visibility-wrapper">
+                        <span id="password-switch-visibility" class="login-main-password-switch-visibility login-main-password-hidden"></span>
+                    </div>
+                </div>
+                <div>
+                    <input id="submit-button" class="login-main-submit-button" type="submit" value="войти">
+                </div>
+            </form>
+        </div>
+        <div class="login-no-account-link-wrapper">
+            <a class="login-no-account-link" asp-action="Register">
+                нет аккаунта?
+            </a>
+        </div>
+    </div>
+</main>
+<script>
+
+    function addEventHandlers(input, loginWrapper) {
+
+        input.addEventListener("focus", event => {
+
+            if (!input.classList.contains("border-red")) {
+
+                input.classList.add("login-main-input-text-focused");
+            }
+        });
+
+        input.addEventListener("blur", event => {
+
+            if (!input.classList.contains("border-red")) {
+
+                input.style.border = "";
+            }
+
+            if (input.classList.contains("login-main-input-text-focused")) {
+
+                input.classList.remove("login-main-input-text-focused");
+            }
+        });
+
+        input.addEventListener("input", event => {
+
+            if (input.classList.contains("border-red")) {
+
+                input.classList.remove("border-red");
+                input.classList.add("login-main-input-text-focused");
+            }
+
+            if (loginWrapper.classList.contains("border-red")) {
+
+                loginWrapper.classList.remove("border-red");
+            }
+        });
+    }
+
+    function addPasswordVisibilitySwitcher(passwordVisibilitySwitcher, passwordInput, repeatPasswordInput) {
+
+        passwordVisibilitySwitcher.addEventListener("click", event => {
+
+            passwordVisibilitySwitcher.classList.toggle("login-main-password-visible");
+            passwordVisibilitySwitcher.classList.toggle("login-main-password-hidden");
+
+            if (passwordInput.getAttribute("type") === "password") {
+
+                passwordInput.setAttribute("type", "text")
+            }
+            else {
+
+                passwordInput.setAttribute("type", "password")
+            }
+        });
+    }
+
+    function addSubmitButtonHandler(loginInput, passwordInput, submitButton) {
+
+        submitButton.addEventListener("click", event => {
+
+            if (loginInput.value.length === 0) {
+
+                if (!loginInput.classList.contains("border-red")) {
+
+                    loginInput.classList.add("border-red");
+                }
+
+                event.preventDefault();
+            }
+
+            if (passwordInput.value.length === 0) {
+
+                if (!passwordInput.classList.contains("border-red")) {
+
+                    passwordInput.classList.add("border-red");
+                }
+
+                event.preventDefault();
+            }
+
+            if (loginWrapper.classList.contains("border-red")) {
+
+                loginWrapper.classList.remove("border-red");
+            }
+        });
+    }
+
+    let loginWrapper = document.getElementById("login-wrapper");
+    let loginInput = document.getElementById("login-input");
+    let passwordInput = document.getElementById("password-input");
+    let passwordVisibilitySwitcher = document.getElementById("password-switch-visibility");
+    let submitButton = document.getElementById("submit-button");
+
+    addEventHandlers(loginInput, loginWrapper);
+    addEventHandlers(passwordInput, loginWrapper);
+    addPasswordVisibilitySwitcher(passwordVisibilitySwitcher, passwordInput);
+    addSubmitButtonHandler(loginInput, passwordInput, submitButton);
+
+</script>

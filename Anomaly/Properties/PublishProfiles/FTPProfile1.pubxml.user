@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+https://go.microsoft.com/fwlink/?LinkID=208121.
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAFMvgEYBm/kOLqD50U9R5oQAAAAACAAAAAAAQZgAAAAEAACAAAADQ0roDPOZFNmH3YpfIbAcRqR45xBb+OLC2eMbnK6I1kAAAAAAOgAAAAAIAACAAAACcg4kSDJORSqFVjLHYSMFiPd8Sj+/qW8Df/l9AuqhMlzAAAAAJue0hLZwOKSJegT3Z3biZwdnYjkczpR7vG574xMoHmH4nRJ4iNQyfoh0uGDeBf51AAAAA2sHBHuCLdR82oTnAlrjnuWAjTnPqPSnQFAmav8aSp2EmnxcWEVrQ2v8iLAJuDB1NTunw00OLeAruF51Tq4wdpg==</EncryptedPassword>
+    <History>False|2023-12-09T19:43:39.3665707Z;False|2023-12-09T17:39:39.6221232+05:00;False|2023-12-09T17:29:58.4660954+05:00;False|2023-12-09T17:29:25.8493902+05:00;False|2023-12-09T17:28:15.7119860+05:00;</History>
+    <LastFailureDetails />
+    <_PublishTargetUrl>ftp://37.140.192.16/www/world-of-anomaly.ru</_PublishTargetUrl>
+  </PropertyGroup>
+</Project>

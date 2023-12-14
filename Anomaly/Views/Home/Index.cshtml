@@ -1,0 +1,64 @@
+﻿@using Anomaly.Helpers
+
+@model IndexViewModel
+
+<header class="main-header">
+    <div class="main-header-wrapper">
+        <div class="main-header-logotype-wrapper">
+            <a asp-action="index">
+                <img class="main-header-logotype" src="~/img/logotype.png" alt="logotype" />
+            </a>
+        </div>
+        <div class="main-header-social-links-wrapper">
+            <a href="@LinksHelper.DISCORD_LINK" class="main-header-discord-social-link">
+                discord<span class="main-header-social-link-arrow">&#8598;</span>
+            </a>
+        </div>
+        <div class="main-header-login-wrapper">
+            @if (Model.User is not null)
+            {
+                <div class="main-header-account-actions-list-wrapper">
+                    <div class="main-header-account-nickname-wrapper">
+                        <span>@Model.User.Nickname</span>
+                    </div>
+                    <div>
+                        <ul class="main-header-account-actions-list">
+                            <li class="main-header-account-actions-list-empty-block">
+                            </li>
+                            <li class="main-header-account-actions-list-item main-header-account-actions-list-first-item main-header-account-actions-list-last-item">
+                                <div>
+                                    <a class="main-header-signout-link" asp-controller="Account" asp-action="SignOut">выход</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <a asp-controller="Account" asp-action="Login">
+                    <input type="button" value="вход" class="main-header-login-button main-header-button">
+                </a>
+            }
+        </div>
+        <div class="main-header-play-wrapper">
+            <a asp-action="Download" download="launcher.txt">
+                <input type="button" value="играть" class="main-header-play-button main-header-button">
+            </a>
+        </div>
+    </div>
+</header>
+<main class="index-main">
+    <div class="index-main-wrapper">
+        <div class="index-main-welcome-wrapper">
+            <p class="index-main-welcome-text">
+                Добро пожаловать
+            </p>
+        </div>
+        <div class="index-main-play-section-wrapper">
+            <a asp-action="Download" download="launcher.txt">
+                <input type="button" value="играть" class="index-main-play-section-button">
+            </a>
+        </div>
+    </div>
+</main>
