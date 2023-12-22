@@ -6,5 +6,8 @@ namespace Anomaly.Models.Auth
     {
         [JsonPropertyName("token")]
         public required string Token { get; set; }
+
+        [JsonPropertyName("nickname")]
+        public required string Nickname { get; set; }
     }
 }

@@ -62,6 +62,7 @@ namespace Anomaly
                 app.UseHsts();
             }
 
+            app.UseCors(builder => builder.AllowAnyOrigin());
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseRouting();

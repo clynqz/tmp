@@ -97,6 +97,7 @@ namespace Anomaly.Controllers
             var response = new AuthResponse
             {
                 Token = token,
+                Nickname = user!.Nickname!,
             };
 
             return Ok(response);
